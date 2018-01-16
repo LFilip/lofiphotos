@@ -1,5 +1,5 @@
 body {
-	background-color:grey;
+	background-color: #90afc5;
 	}
 
 
@@ -13,17 +13,19 @@ p {
 	text-align:center;
 }
 
+a {
+	text-decoration: none;
+}
 
-table {
+.box-shadow {
+	box-shadow: 2px 1px 6px 2px black;
 }
 
 #left{
-
 	font-family:Verdana;
 }
 
 #right{
-
 	font-family:Courier;
 }
 
@@ -39,4 +41,29 @@ table {
 	margin:auto;
 	word-wrap: word-break;
 	text-align:center;
+}
+
+.main-option {
+	display: block;
+	color: black;
+	height: 100px;
+	background-color: #2A3132;
+	color: white;
+	border-right: 2px black solid;
+	margin-bottom: 15px;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 45px;
+}
+
+.main-option:hover {
+	box-shadow: 2px 2px grey;
+	background-color: silver;
+	border: 1px white solid;
+	border-radius: 5px;
+}
+
+.local-content {
+	width: 80%;
 }
