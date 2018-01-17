@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  background-color: skyblue;
 }
 
 .header {
@@ -63,13 +62,12 @@
 }
 
 .footer {
-  height: 40px;
+  height: 140px;
   width: 30%;
-  background-color: lightgrey;
   margin:0 auto;
   margin-top: 15px;
   display: block;
-  float: left;
+  float: center;
   text-align: center;
 }
 
@@ -82,9 +80,10 @@
 }
 
 .selectBtn {
-  background-color: white;
-  height: 150px;
-  width: 150px;
+  background-color: silver;
+  height:50px;
+  width: 45px;
   border-radius: 45px;
   border: none;
+  box-shadow:1px 1px grey;
 }

@@ -1,0 +1,85 @@
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	}
+
+
+h1 {
+	text-decoration:underline;
+	text-decoration: none;
+	text-align:center;
+	color: #FAED25;
+}
+
+p {
+	text-align:center;
+}
+
+a {
+	text-decoration: none;
+}
+
+.box-shadow:hover {
+	box-shadow: 1px 1px 15px  silver;
+}
+
+
+.title-content {
+	margin-top: 40px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 26px;
+	text-align: center;
+	color: #FAED26;
+	margin-top: 7%;
+	margin-bottom: 15%;
+}
+
+.title-content p {
+	color: blue;
+	font-size: 22px;
+}
+
+.title-content:hover {
+	font-size: 26px;
+	text-shadow:1px 1px 1px  silver;
+}
+
+
+.local-content {
+	width: 80%;
+	height: 110%;
+}
+
+
+.skills ul {
+	font-family: 'Roboto', sans-serif;
+	list-style: none;
+	float: right;
+	margin-top: 21px;
+	padding-left: 0;
+}
+.skills li {
+	width: 152px;
+	font-size: .9em;
+
+}
+
+.li-header {
+		font-family: 'Roboto', sans-serif;
+		color: grey;
+}
+
+
+.bio-content {
+	width: 75%;
+	margin: 0 auto;
+	color: grey;
+}
+
+.signature {
+	text-align: right;
+}
