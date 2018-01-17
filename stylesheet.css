@@ -1,12 +1,18 @@
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
 body {
-	background-color: #90afc5;
+	margin: 0;
+	padding: 0;
 	}
 
 
 h1 {
 	text-decoration:underline;
-	text-decoration:bold;
+	text-decoration: none;
 	text-align:center;
+	color: #FAED25;
 }
 
 p {
@@ -17,8 +23,8 @@ a {
 	text-decoration: none;
 }
 
-.box-shadow {
-	box-shadow: 2px 1px 6px 2px black;
+.box-shadow:hover {
+	box-shadow: 1px 1px 15px  silver;
 }
 
 #left{
@@ -43,27 +49,73 @@ a {
 	text-align:center;
 }
 
+.options-container {
+	width: 90%;
+	margin: 0 auto;
+}
+
 .main-option {
 	display: block;
-	color: black;
-	height: 100px;
-	background-color: #2A3132;
-	color: white;
+	height: 75px;
+	min-width: 75px;
+	width: 30%;
+  margin-left: 1%;
+	background-color: #FAED26;
+	color: grey;
 	border-right: 2px black solid;
-	margin-bottom: 15px;
 	padding-top: 20px;
 	text-align: center;
-	font-size: 20px;
-	border-radius: 45px;
+	font-size: 17px;
+	border-radius: 30px;
+	float: left;
 }
 
 .main-option:hover {
 	box-shadow: 2px 2px grey;
-	background-color: silver;
+	inner-shadow: 1px 2px grey;
 	border: 1px white solid;
-	border-radius: 5px;
 }
+
+
+
+.title-content {
+	margin-top: 40px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	text-align: center;
+	color: #FAED26;
+	margin-bottom: 40px;
+}
+
+.title-content p {
+	color: blue;
+	font-size: 19px;
+}
+
+.title-content:hover {
+	font-size: 26px;
+	text-shadow:1px 1px 1px 21px silver;
+}
+
 
 .local-content {
 	width: 80%;
+	height: 110%;
+}
+
+
+.skills ul {
+	font-family: 'Roboto', sans-serif;
+	list-style: none;
+	float: right;
+	margin-top: 35px;
+	margin-right: 35px;
+}
+.skills li {
+	font-size: .9em;
+}
+
+.li-header {
+		font-family: 'Roboto', sans-serif;
+		color: grey;
 }
