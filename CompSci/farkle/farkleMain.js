@@ -17,13 +17,22 @@ var playerToUpdate;
   firebase.initializeApp(config);
 
   var firestore = firebase.firestore();
-  console.log(firestore);
-
+  console.log(firestore.collection("scores").doc("player0").get());
 
 function addPlayers(){
+  deletePlayers();
+
+  numberOfPlayers = prompt("Please enter the number of players (1 - 8).  Q to quit");
+  console.log(numberOfPlayers.toUpperCase() != "Q" )
+  while(parseInt(numberOfPlayers) > 8 || parseInt(numberOfPlayers)  < 1) {
+    numberOfPlayers = prompt("Needs to be between 1 and 8.  Q to quit");
+  }
+
+  if (parseInt(numberOfPlayers) <= 8 && parseInt(numberOfPlayers)  >= 1){
+
   for (i = 0; i < numberOfPlayers;i++){
     let newPlayer = {};
-    newPlayer.name = prompt("Please enter a name for this player", "Johnson");
+    newPlayer.name = prompt("Please enter a name for this player", "");
     newPlayer.score = 0;
     firestore.collection("scores").doc("player" + i).set({
       name: newPlayer.name,
@@ -32,14 +41,19 @@ function addPlayers(){
       console.log("Status saved");
     });
     players.push(newPlayer);
+    console.log(players);
   }
   createPlayerDivs();
+  }
 }
 
+
 function createPlayerDivs(){
+  console.log("creating player divs")
   let playersDiv = document.querySelector(".players");
   playersDiv.innerHTML = "";
   for (i=0;i<numberOfPlayers;i++){
+    console.log(i);
     let newPlayerDiv = document.createElement('div');
     newPlayerDiv.innerHTML = "<div class='name'> " +
                              players[i].name +
@@ -51,7 +65,6 @@ function createPlayerDivs(){
     newPlayerDiv.classList.add("player");
     newPlayerDiv.addEventListener("click", addPoints);
     newPlayerDiv.index = i;
-    console.log(playersDiv);
     playersDiv.appendChild(newPlayerDiv);
   }
 }
@@ -95,13 +108,22 @@ function addPoints(evt){
   }
 }
 
+function deletePlayers() {
+  for (i = 0; i < 8; i++){
+    firestore.collection("scores").doc("player" + i).delete().then(function() {
+      console.log("Document successfully deleted!");
+    }).catch(function(error) {
+      console.error("Error removing document: ", error);
+    });
+  }
+}
 
 function loadGame() {
   console.log("loading Game")
+  if (confirm("Doing this will erase this game. Do you wish to continue?")){
   let i = 0;
 
   if (players.length <= 0){
-    numberOfPlayers = 0;
     firestore.collection("scores").where("score", ">=", 0)
       .get()
       .then(function(querySnapshot) {
@@ -111,26 +133,23 @@ function loadGame() {
               newPlayer.name = doc.data().name;
               newPlayer.score = doc.data().score;
               players.push(newPlayer);
-              numberOfPlayers++;
+               i++;
+               numberOfPlayers = i;
+               console.log(numberOfPlayers);
+               createPlayerDivs();
           });
       })
       .catch(function(error) {
           console.log("Error getting documents: ", error);
       });
-      console.log(players);
 
   }
-        createPlayerDivs();
+
+      }
 }
 
 function selectNumber() {
   players.length = 0;
-    let numberField = document.querySelector(".numberOfPlayers");
-    numberOfPlayers = parseInt(numberField.value);
-    if (numberOfPlayers > 8 || numberOfPlayers < 1){
-      alert("There can be between 1 and 8 players");
-      return;
-    }
     addPlayers();
 }
 

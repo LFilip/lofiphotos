@@ -9,8 +9,8 @@ body {
 
 #grid {
   margin: 0 auto;
-  height: 500px;
-  width: 500px;
+  height: 350px;
+  width: 350px;
   background-color: black;
 }
 
@@ -28,8 +28,10 @@ body {
 }
 
 .header {
-  background-color: blue;
-  width: 500px;
+  background-color: navy;
+  color: white;
+  width: 100%;
   margin: 0 auto;
-  height: 115px;
+  height: 20%;
+  text-align: center;
 }

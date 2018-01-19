@@ -1,10 +1,15 @@
 html {
 	font-family: 'Roboto', sans-serif;
+
 }
 
 body {
 	margin: 0;
 	padding: 0;
+	height: 600px;
+	background: -webkit-linear-gradient(left, white, #FDFDbd);
+	background: -o-linear-gradient(left, white, #FDFDbd);
+	background: linear-gradient(to right, white, #ffffe6);
 	}
 
 

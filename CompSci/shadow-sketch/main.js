@@ -37,6 +37,9 @@ function createGrid( pixelDensity ){
 
 function emptyGrid(){
   gridContainer.innerHTML = "";
-   let newPixelDensity = window.prompt("Enter the size ( 1 - 500 )", "16");
+   let newPixelDensity = window.prompt("Enter the size ( 1 - 150 )", "16");
+   while (newPixelDensity < 0 || newPixelDensity > 150){
+     newPixelDensity = window.prompt("Enter a size between 1 and 150");
+   }
    createGrid(newPixelDensity);
 }
