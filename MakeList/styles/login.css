@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: block;
+  float: left;
+  margin: 150px auto;
+}
+
+.container input {
+  margin-left: 45px;
+  width: 30%;
+  height: 50px;
+}
+
+#btnLogin {
+  margin-left: 54px;
+}
+
+#btnSignUp {
+  margin-left: 5px;
+}
