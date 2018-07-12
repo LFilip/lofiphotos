@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-messaging.js"></script>
+  <title>Make A Recipe</title>
+</head>
+<body>
+<h1>Welcome to MakeList</h1>
+<div class="container">
+  <div class="row">
+    <button id="listBtn">Lists</button>
+  </div>
+</div>
+
+<h2> Create a Recipe!</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Create New ingredient</h3>
+      <input type="text" id="nameInput">Ingredient Name</input></br>
+      <input type="number" id="numberInput">Number of Ingredient</input></br>
+      <input type="text" id="unitInput">Unit of Measure</input></br>
+      <button id="submitBtn">Submit</button>
+    </div>
+    <div id="recipeInfo" class="col">
+      <h3>Info about the recipe</h3>
+      <input type="text" id="recipeName">Recipe Name</input></br>
+      <input type="number" id="recipePrepTime">Total prep time(mins)</input></br>
+      <input type="number" id="recipeCookTime">Total cook time(mins)</input></br>
+      <button id="submitRecipeBtn">Submit</button>
+    </div>
+  </div>
+</br></br>
+  <div class="row">
+    <div class="col">
+      <h3>Create New Step</h3>
+      <input type="text" id="stepInput">Please enter the step</input></br>
+      <button id="submitStepBtn">Submit</button>
+    </div>
+    <div class="col">
+      <div id=content></div>
+      <button id="finalBtn">Submit Recipe</button>
+    </div>
+  </div>
+</div>
+<script src="./scripts/makeRecipe.js"></script>
+
+</body>
+</html>

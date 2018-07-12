@@ -30,29 +30,31 @@ btnAccount.addEventListener("click", e=> {
 })
 
 const main = document.getElementById("main");
-
-
 const btn = document.createElement("BUTTON");        // Create a <button> element
-const t = document.createTextNode("MakeList");       // Create a text node
+const t = document.createTextNode("Create Recipe");       // Create a text node
 btn.classList.add("btn")
+btn.addEventListener("click", e=>{
+  window.location = "./makeRecipe.html";
+})
 btn.appendChild(t);                                // Append the text to <button>
 main.appendChild(btn);
 
-// adding the event listener for second button
 
 
+var currentUser;
+firebase.auth().onAuthStateChanged(function(user){
 
-
-
+});
 setTimeout(function (){
 
   user = firebase.auth().currentUser;
   console.log(user);
   var div= document.createElement("div")
   div.classList.add("row");
-  div.innerHTML = user.email;
-  div.id = "emailDiv";
-
+  if(user !== null){
+    div.innerHTML = user.email;
+    div.id = "emailDiv";
+  }
   document.body.appendChild(div);
 
 }, 1000);

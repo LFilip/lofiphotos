@@ -20,15 +20,28 @@
   const btnLogout = document.getElementById("btnLogout");
 
   // add login event
-
   btnLogin.addEventListener('click', e=>{
     //Get email and password
     const email = txtEmail.value;
     const password = txtPassword.value;
     const auth = firebase.auth();
     // sign in
-    const promise = auth.signInWithEmailAndPassword(email, password);
-    promise.catch( e => console.log(e.message));
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  .then(function() {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+//    const promise = auth.signInWithEmailAndPassword(email, password);
+//    promise.catch( e => console.log(e.message));
   })
 
   // add sign up addEventListener
@@ -52,7 +65,7 @@
 
   // add a realtime authentication user
 
-    firebase.auth().onAuthStateChanged(firebaseUser => {
+  firebase.auth().onAuthStateChanged(firebaseUser => {
       if(firebaseUser) {
         console.log(firebaseUser);
         btnLogin.classList.add('invisible');

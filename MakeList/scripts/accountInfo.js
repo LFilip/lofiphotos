@@ -1,4 +1,6 @@
 // Initialize Firebase
+
+// Initialize Firebase
 var config = {
 
     apiKey: "AIzaSyANp80QxpFQx6gu1RZaq56-D78EaltckB4",
@@ -16,11 +18,6 @@ var user;
 var userDocRef;
 var userDocument;
 
-setTimeout(function (){
-  user = firebase.auth().currentUser;
-  userDocRef = db.collection("users").doc(user.email);
-  getData();
-}, 300);
 
 const btnLists = document.getElementById("btnLists");
 btnLists.addEventListener("click", e => {
@@ -115,3 +112,10 @@ function changeData(btnPressed){
     default:
   }
 }
+
+firebase.auth().onAuthStateChanged(function(user){
+    user = firebase.auth().currentUser;
+    userDocRef = db.collection("users").doc(user.email);
+    getData();
+        console.log(user);
+});
